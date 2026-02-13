@@ -1,4 +1,4 @@
-# Product & Inventory Management System
+# Product & Inventory Management System v1.0
 
 A role-based Product and Inventory Management System built using **Node.js**, **Express.js**, **MongoDB**, and **EJS**, following the **MVC (Model–View–Controller)** architecture and **RESTful API principles**.
 
