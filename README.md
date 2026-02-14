@@ -28,7 +28,7 @@ This project is designed to demonstrate clean backend structure, proper access c
 **Backend**
 - Node.js
 - Express.js
-- MongoDB (Mongoose ODM)
+- MongoDB 
 
 **Frontend**
 - EJS (Embedded JavaScript Templates)
@@ -70,26 +70,6 @@ This project is designed to demonstrate clean backend structure, proper access c
 
 ---
 
-## 🧠 Tech Stack
-
-**Backend**
-- Node.js
-- Express.js
-- MongoDB (Mongoose ODM)
-
-**Frontend**
-- EJS (Embedded JavaScript Templates)
-- Bootstrap 5
-
-**Architecture & Concepts**
-- MVC Architecture
-- RESTful APIs
-- Session-based Authentication
-- Middleware-based Authorization
-- Role-Based Access Control (RBAC)
-
----
-
 ## 📂 Project Structure
 
 /core
@@ -105,7 +85,7 @@ This project is designed to demonstrate clean backend structure, proper access c
 - **Controllers**: Business logic and request handling
 - **Routes**: API endpoints and route mapping
 - **Views**: EJS templates for UI
-- **Middleware**: Authentication and role authorization
+- **Middleware**: Authentication and role Authorization
 
 ---
 
@@ -133,5 +113,7 @@ All operations follow RESTful conventions using proper HTTP methods.
 ---
 
 ## 👨‍💻 Author - **[Mithil Dhure](https://www.linkedin.com/in/mithil-dhure/)**
+
+The next update will focus on some minor UI changes!
 
 feel free to ask about my project, open to discuss and any error or doubts plz contact me <3 
