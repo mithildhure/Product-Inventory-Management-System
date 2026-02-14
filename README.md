@@ -116,4 +116,4 @@ All operations follow RESTful conventions using proper HTTP methods.
 
 The next update will focus on some minor UI changes!
 
-feel free to ask about my project, open to discuss and any error or doubts plz contact me <3 
+feel free to ask about my project, open to discuss and any error or doubts plz contact me <3
