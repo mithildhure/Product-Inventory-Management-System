@@ -22,11 +22,14 @@ app.use(session({
     saveUninitialized:false
 }))
 
-app.use("/",uroute);
-app.use("/",proute);
+
 app.get("/ping",(req,resp)=>{
     resp.status(200).send("Server Is Awake!");
 })
+
+app.use("/",uroute);
+app.use("/",proute);
+
 
 app.use((req,resp,next)=>{
     resp.status(404).render("404");
