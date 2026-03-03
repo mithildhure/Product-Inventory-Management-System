@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-
-const connectDb = ()=>{
-    mongoose.connect("mongodb://localhost:27017/Prod_Management").then(() => {
-        console.log("Connected");
-    }).catch((err) => {
-        console.log(err);
-    });
+const connectDb = async ()=>{
+    try {
+     await mongoose.connect(process.env.MONGO_URI);
+     console.log("Succesfully connected");
+    } catch (error) {
+        console.log("Data base connection failed : ",error);
+        process.exit(1);
+    }
 }
 
 module.exports = {connectDb};

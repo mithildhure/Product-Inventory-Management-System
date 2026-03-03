@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const uroute = require('./router/urouter');
 const proute = require('./router/prouter');
@@ -16,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOveride("_method"));
 
 app.use(session({
-    secret:"idk_bruh",
+    secret:process.env.SESSION_SECRET,
     resave:false,
     saveUninitialized:false
 }))
@@ -28,6 +29,8 @@ app.use((req,resp,next)=>{
     resp.status(404).render("404");
 })
 
-app.listen(4000,()=>{
-    console.log("Running");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT,()=>{
+    console.log(`Running on port : ${PORT}`);
 })
