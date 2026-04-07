@@ -4,6 +4,20 @@ const userModel = require("../model/userModel");
 const register = async (req,resp) => {
     try {
         const {username, email, password, role} = req.body;
+        const existingUser = await userModel.findOne({
+            $or : [
+                {username : username},
+                {email : email}
+            ]
+        });
+        if(existingUser){
+            if(existingUser.email === email){
+                return resp.render("register",{error : "Email Already Exist"});
+            }
+            if(existingUser.username === username){
+                return resp.render("register",{error : "User Already Exist"});
+            }
+        }
         const hashp = await bcryptjs.hash(password,10); 
         await userModel.create({username, email, password:hashp, role});
         resp.redirect("/login?success=Account Created Succesfully!");

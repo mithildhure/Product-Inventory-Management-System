@@ -7,7 +7,7 @@ uroute.get("/login",(req,resp)=>{
     resp.render("login");
 });
 uroute.get("/register",(req,resp)=>{
-    resp.render("register");
+    res.render("register", { error: null });
 });
 
 uroute.post("/register",register);
