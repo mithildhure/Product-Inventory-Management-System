@@ -40,6 +40,12 @@
                 class="container text-center"
             >
                 <h3 class="my-3 p-2" >Edit Product</h3>
+                <% if (typeof error !== 'undefined' && error) { %>
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <% } %>
             </div>
             
                 <form action="/edit/<%= product.id %>?_method=patch" method="post">
@@ -74,7 +80,7 @@
                             value="<%= product.price %>"
                             required
                         />
-                        <label for="formId1">Price minimum 100</label>
+                        <label for="formId1">Price</label>
                     </div>
 
                     <div class="mb-3">
@@ -97,7 +103,7 @@
                             value="<%= product.quantity %>"
                             required
                         />
-                        <label for="formId1">Quantity NOT MORE THAN 100</label>
+                        <label for="formId1">Quantity</label>
                     </div>
                     
                     <div

@@ -37,6 +37,13 @@
             >
                 <h3 class="text-primary">Register</h3>
 
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                        <%= error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                <% } %>
+
                 <div
                     class="container my-3 text-center"
                 >
@@ -49,7 +56,7 @@
                                 name="username"
                                 required
                             />
-                            <label for="formId1">Username more than 5 letters</label>
+                            <label for="formId1">Username</label>
                         </div>
 
                          <div class="form-floating mb-3">
@@ -69,7 +76,7 @@
                                 name="password"
                                 required
                             />
-                            <label for="formId1">Password more than 3 letters</label>
+                            <label for="formId1">Password</label>
                         </div>
 
                         <button
@@ -101,10 +108,5 @@
             crossorigin="anonymous"
         ></script>
         <%- include("partials/footer") %>
-        <% if (error) { %>
-            <script>
-            alert("<%= error %>");
-            </script>
-        <% } %>
     </body>
 </html>

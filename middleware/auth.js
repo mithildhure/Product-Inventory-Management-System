@@ -6,11 +6,11 @@ const isAuth = (req,resp,next)=>{
     }
 }
 
-const isAdmin = (req,resp,next)=>{
-    if (req.session.userData.role !== "admin") {
-        resp.status(403).send("Access Denied!");
+const isAdmin = (req, resp, next) => {
+    if (!req.session.userData || req.session.userData.role !== "admin") {
+        return resp.status(403).send("Access Denied!"); 
     }
     next();
-}
+};
 
 module.exports = {isAuth, isAdmin};

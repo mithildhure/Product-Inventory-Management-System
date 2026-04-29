@@ -40,6 +40,12 @@
                 class="container text-center"
             >
                 <h3 class="my-3 p-2" >Add Product</h3>
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                    <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                <% } %>
             </div>
             
                 <form action="/add" method="post">
@@ -71,7 +77,7 @@
                             name="price"
                             required
                         />
-                        <label for="formId1">Price minimum 100</label>
+                        <label for="formId1">Price</label>
                     </div>
 
                     <div class="mb-3">
@@ -92,7 +98,7 @@
                             class="form-control"
                             name="quantity"
                         />
-                        <label for="formId1">Quantity maximum 100</label>
+                        <label for="formId1">Quantity</label>
                     </div>
                     
                     <div
